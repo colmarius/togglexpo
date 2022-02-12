@@ -5,6 +5,7 @@ import 'expo/build/Expo.fx';
 import { registerRootComponent } from 'expo';
 import { activateKeepAwake } from 'expo-keep-awake';
 
+// eslint-disable-next-line import/extensions
 import App from './App';
 
 if (__DEV__) {
