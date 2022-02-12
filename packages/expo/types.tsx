@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-namespace */
+/* eslint-disable @typescript-eslint/no-empty-interface */
 /**
  * Learn more about using TypeScript with React Navigation:
  * https://reactnavigation.org/docs/typescript/
