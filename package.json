@@ -6,7 +6,7 @@
     "packages/expo"
   ],
   "scripts": {
-    "start": "yarn workspace timly start",
+    "start": "yarn workspace @timly/mobile start",
     "lint": "npx eslint --fix ./packages",
     "postinstall": "patch-package"
   },
