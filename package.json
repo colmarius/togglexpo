@@ -3,7 +3,7 @@
   "private": true,
   "license": "MIT",
   "workspaces": [
-    "packages/expo"
+    "packages/mobile"
   ],
   "scripts": {
     "start": "yarn workspace @timly/mobile start",
