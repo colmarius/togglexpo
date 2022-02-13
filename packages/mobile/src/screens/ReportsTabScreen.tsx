@@ -20,10 +20,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export const TabTwoScreen = () => (
+export const ReportsTabScreen = () => (
   <View style={styles.container}>
-    <Text style={styles.title}>Tab Two</Text>
+    <Text style={styles.title}>Reports Tab</Text>
     <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-    <EditScreenInfo path="/screens/TabTwoScreen.tsx" />
+    <EditScreenInfo path="/screens/ReportsTabScreen.tsx" />
   </View>
 );
