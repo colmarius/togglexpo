@@ -13,7 +13,7 @@ import { ColorSchemeName, Pressable } from 'react-native';
 
 import { Colors } from '../constants';
 import { useColorScheme } from '../hooks';
-import { ModalScreen, NotFoundScreen, TabOneScreen, TabTwoScreen } from '../screens';
+import { ModalScreen, NotFoundScreen, TabTwoScreen, TimerTabScreen } from '../screens';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -38,16 +38,16 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="TimerTab"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}
     >
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneScreen}
-        options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
-          title: 'Tab One',
+        name="TimerTab"
+        component={TimerTabScreen}
+        options={({ navigation }: RootTabScreenProps<'TimerTab'>) => ({
+          title: 'Timer Tab',
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Pressable

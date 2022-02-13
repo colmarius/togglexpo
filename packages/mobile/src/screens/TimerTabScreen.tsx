@@ -22,10 +22,10 @@ const styles = StyleSheet.create({
 });
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const TabOneScreen = ({ navigation }: RootTabScreenProps<'TabOne'>) => (
+export const TimerTabScreen = ({ navigation }: RootTabScreenProps<'TimerTab'>) => (
   <View style={styles.container}>
-    <Text style={styles.title}>Tab One</Text>
+    <Text style={styles.title}>Timer Tab</Text>
     <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-    <EditScreenInfo path="/screens/TabOneScreen.tsx" />
+    <EditScreenInfo path="/screens/TimerTabScreen.tsx" />
   </View>
 );
