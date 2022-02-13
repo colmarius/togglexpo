@@ -1,3 +1,5 @@
-# Timly: time tally tracker app
+# Togglexpo
 
-work-in-progress
+Toggl clone. Learning expo and react-native.
+
+Work-in-progress...
