@@ -4,7 +4,7 @@
  *
  */
 /* eslint-disable security/detect-object-injection */
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -21,10 +21,11 @@ import LinkingConfiguration from './LinkingConfiguration';
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
  */
 function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
+  name: React.ComponentProps<typeof MaterialIcons>['name'];
   color: string;
 }) {
-  return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
+  return <MaterialIcons size={30} style={{ marginBottom: -3 }} {...props} />;
+  // return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
 }
 
 /**
@@ -48,7 +49,7 @@ function BottomTabNavigator() {
         component={TimerTabScreen}
         options={({ navigation }: RootTabScreenProps<'TimerTab'>) => ({
           title: 'Timer Tab',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="access-time" color={color} />,
           headerRight: () => (
             <Pressable
               onPress={() => navigation.navigate('Modal')}
@@ -56,8 +57,8 @@ function BottomTabNavigator() {
                 opacity: pressed ? 0.5 : 1,
               })}
             >
-              <FontAwesome
-                name="info-circle"
+              <MaterialIcons
+                name="info"
                 size={25}
                 color={Colors[colorScheme].text}
                 style={{ marginRight: 15 }}
@@ -71,7 +72,7 @@ function BottomTabNavigator() {
         component={ReportsTabScreen}
         options={{
           title: 'Reports Tab',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="bar-chart" color={color} />,
         }}
       />
     </BottomTab.Navigator>
