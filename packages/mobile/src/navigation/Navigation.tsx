@@ -13,7 +13,13 @@ import { ColorSchemeName, Pressable } from 'react-native';
 
 import { Colors } from '../constants';
 import { useColorScheme } from '../hooks';
-import { ModalScreen, NotFoundScreen, ReportsTabScreen, TimerTabScreen } from '../screens';
+import {
+  CalendarTabScreen,
+  ModalScreen,
+  NotFoundScreen,
+  ReportsTabScreen,
+  TimerTabScreen,
+} from '../screens';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
@@ -66,6 +72,14 @@ function BottomTabNavigator() {
             </Pressable>
           ),
         })}
+      />
+      <BottomTab.Screen
+        name="CalendarTab"
+        component={CalendarTabScreen}
+        options={{
+          title: 'Calendar Tab',
+          tabBarIcon: ({ color }) => <TabBarIcon name="calendar-today" color={color} />,
+        }}
       />
       <BottomTab.Screen
         name="ReportsTab"

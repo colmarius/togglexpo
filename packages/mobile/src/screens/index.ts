@@ -1,3 +1,4 @@
+export * from './CalendarTabScreen';
 export * from './ModalScreen';
 export * from './NotFoundScreen';
 export * from './ReportsTabScreen';
