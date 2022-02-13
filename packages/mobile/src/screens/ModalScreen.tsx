@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Platform, StyleSheet } from 'react-native';
+import { Divider } from 'react-native-paper';
 
 import { EditScreenInfo } from '../components';
 import { Text, View } from '../components/Themed';
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
 export const ModalScreen = () => (
   <View style={styles.container}>
     <Text style={styles.title}>Modal</Text>
-    <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+    <Divider />
     <EditScreenInfo path="/screens/ModalScreen.tsx" />
 
     {/* Use a light status bar on iOS to account for the black space above the modal */}
