@@ -21,15 +21,10 @@ import {
 } from '../screens';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
-function TabBarIcon(props: {
+const TabBarIcon = (props: {
   name: React.ComponentProps<typeof MaterialIcons>['name'];
   color: string;
-}) {
-  return <MaterialIcons size={30} style={{ marginBottom: -3 }} {...props} />;
-}
+}) => <MaterialIcons size={30} style={{ marginBottom: -3 }} {...props} />;
 
 /**
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
@@ -37,7 +32,7 @@ function TabBarIcon(props: {
  */
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
-function BottomTabNavigator() {
+const BottomTabNavigator = () => {
   const colorScheme = useColorScheme();
 
   return (
@@ -61,7 +56,7 @@ function BottomTabNavigator() {
               })}
             >
               <MaterialIcons
-                name="info"
+                name="settings"
                 size={25}
                 color={Colors[colorScheme].text}
                 style={{ marginRight: 15 }}
@@ -88,7 +83,7 @@ function BottomTabNavigator() {
       />
     </BottomTab.Navigator>
   );
-}
+};
 
 /**
  * A root stack navigator is often used for displaying modals on top of all other content.
