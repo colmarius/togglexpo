@@ -1,12 +1,12 @@
 {
-  "name": "timly",
+  "name": "togglexpo",
   "private": true,
   "license": "MIT",
   "workspaces": [
     "packages/mobile"
   ],
   "scripts": {
-    "start": "yarn workspace @timly/mobile start",
+    "start": "yarn workspace @togglexpo/mobile start",
     "lint": "npx eslint --fix ./packages",
     "postinstall": "patch-package"
   },

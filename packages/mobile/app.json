@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "timly",
-    "slug": "timly",
+    "name": "togglexpo",
+    "slug": "togglexpo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -19,6 +19,7 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "org.togglexpo",
       "supportsTablet": true
     },
     "android": {
