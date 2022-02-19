@@ -10,8 +10,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
 import { Pressable } from 'react-native';
 
-import { Colors } from '../constants';
-import { useColorScheme } from '../hooks';
+import { useColors } from '../hooks';
 import {
   CalendarTabScreen,
   ModalScreen,
@@ -33,13 +32,13 @@ const TabBarIcon = (props: {
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 const BottomTabNavigator = () => {
-  const colorScheme = useColorScheme();
+  const colors = useColors();
 
   return (
     <BottomTab.Navigator
       initialRouteName="TimerTab"
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
+        tabBarActiveTintColor: colors.tint,
       }}
     >
       <BottomTab.Screen
@@ -58,7 +57,7 @@ const BottomTabNavigator = () => {
               <MaterialIcons
                 name="settings"
                 size={25}
-                color={Colors[colorScheme].text}
+                color={colors.text}
                 style={{ marginRight: 15 }}
               />
             </Pressable>
