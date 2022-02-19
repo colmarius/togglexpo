@@ -45,7 +45,7 @@ const BottomTabNavigator = () => {
         name="TimerTab"
         component={TimerTabScreen}
         options={({ navigation }: RootTabScreenProps<'TimerTab'>) => ({
-          title: 'Timer Tab',
+          title: 'Timer',
           tabBarIcon: ({ color }) => <TabBarIcon name="access-time" color={color} />,
           headerRight: () => (
             <Pressable
@@ -68,7 +68,7 @@ const BottomTabNavigator = () => {
         name="CalendarTab"
         component={CalendarTabScreen}
         options={{
-          title: 'Calendar Tab',
+          title: 'Calendar',
           tabBarIcon: ({ color }) => <TabBarIcon name="calendar-today" color={color} />,
         }}
       />
@@ -76,7 +76,7 @@ const BottomTabNavigator = () => {
         name="ReportsTab"
         component={ReportsTabScreen}
         options={{
-          title: 'Reports Tab',
+          title: 'Reports',
           tabBarIcon: ({ color }) => <TabBarIcon name="bar-chart" color={color} />,
         }}
       />
