@@ -23,11 +23,11 @@ const styles = StyleSheet.create({
   },
 });
 
-export const ModalScreen = () => (
+export const SettingsScreen = () => (
   <View style={styles.container}>
-    <Text style={styles.title}>Modal</Text>
+    <Text style={styles.title}>Settings</Text>
     <Divider />
-    <EditScreenInfo path="/screens/ModalScreen.tsx" />
+    <EditScreenInfo path="/screens/SettingsScreen.tsx" />
 
     {/* Use a light status bar on iOS to account for the black space above the modal */}
     <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />

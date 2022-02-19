@@ -8,17 +8,17 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import { Pressable } from 'react-native';
 
 import { useColors } from '../hooks';
 import {
   CalendarTabScreen,
-  ModalScreen,
   NotFoundScreen,
   ReportsTabScreen,
+  SettingsScreen,
   TimerTabScreen,
 } from '../screens';
-import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
+import { RootStackParamList, RootTabParamList } from '../types';
+import { SettingsButton } from './SettingsButton';
 
 const TabBarIcon = (props: {
   name: React.ComponentProps<typeof MaterialIcons>['name'];
@@ -44,41 +44,29 @@ const BottomTabNavigator = () => {
       <BottomTab.Screen
         name="TimerTab"
         component={TimerTabScreen}
-        options={({ navigation }: RootTabScreenProps<'TimerTab'>) => ({
+        options={({ navigation }) => ({
           title: 'Timer',
           tabBarIcon: ({ color }) => <TabBarIcon name="access-time" color={color} />,
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate('Modal')}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}
-            >
-              <MaterialIcons
-                name="settings"
-                size={25}
-                color={colors.text}
-                style={{ marginRight: 15 }}
-              />
-            </Pressable>
-          ),
+          headerRight: () => <SettingsButton navigation={navigation} />,
         })}
       />
       <BottomTab.Screen
         name="CalendarTab"
         component={CalendarTabScreen}
-        options={{
+        options={({ navigation }) => ({
           title: 'Calendar',
           tabBarIcon: ({ color }) => <TabBarIcon name="calendar-today" color={color} />,
-        }}
+          headerRight: () => <SettingsButton navigation={navigation} />,
+        })}
       />
       <BottomTab.Screen
         name="ReportsTab"
         component={ReportsTabScreen}
-        options={{
+        options={({ navigation }) => ({
           title: 'Reports',
           tabBarIcon: ({ color }) => <TabBarIcon name="bar-chart" color={color} />,
-        }}
+          headerRight: () => <SettingsButton navigation={navigation} />,
+        })}
       />
     </BottomTab.Navigator>
   );
@@ -95,7 +83,7 @@ export const RootNavigator = () => (
     <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
     <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     <Stack.Group screenOptions={{ presentation: 'modal' }}>
-      <Stack.Screen name="Modal" component={ModalScreen} />
+      <Stack.Screen name="Settings" component={SettingsScreen} />
     </Stack.Group>
   </Stack.Navigator>
 );
