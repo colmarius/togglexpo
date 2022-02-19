@@ -19,19 +19,16 @@ const paperTheme = {
 export const App = () => {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
-
   const theme = colorScheme === 'dark' ? DarkTheme : DefaultTheme;
 
-  if (!isLoadingComplete) {
-    return null;
-  } else {
-    return (
-      <SafeAreaProvider>
-        <PaperProvider theme={paperTheme}>
-          <Navigation theme={theme} />
-          <StatusBar />
-        </PaperProvider>
-      </SafeAreaProvider>
-    );
-  }
+  if (!isLoadingComplete) return null;
+
+  return (
+    <SafeAreaProvider>
+      <PaperProvider theme={paperTheme}>
+        <Navigation theme={theme} />
+        <StatusBar />
+      </PaperProvider>
+    </SafeAreaProvider>
+  );
 };
